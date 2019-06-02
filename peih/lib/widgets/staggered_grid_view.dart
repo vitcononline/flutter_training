@@ -32,16 +32,16 @@ class _StaggeredGridViewState extends State<StaggeredGridView> {
   @override
   Widget build(BuildContext context) {
     List<Widget> rows = [];
-    for (var column in this.columns) {
+
+    for (var i = 0; i < columns.length; i++) {
       List<Widget> items = [];
 
-      column.forEach((item) => {items.add(item.item)});
+      columns[i].forEach((item) => {items.add(item.item)});
 
       rows.add(
         Expanded(
           flex: 1,
           child: Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peih/screens/detail/detail.dart';
 import 'package:peih/screens/home/home.dart';
 
 void main() => runApp(MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
             // title: Text('Ec ec'),
             ),
-        body: Home(),
+        body: Detail(),
+        backgroundColor: Colors.white,
       ),
     );
   }

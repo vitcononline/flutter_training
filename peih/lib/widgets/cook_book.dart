@@ -11,7 +11,7 @@ class CookBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(left: 4, right: 4, top: 10),
       // color: Colors.blue,
       child: Image(
         image: AssetImage(this.image),
