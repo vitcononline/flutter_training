@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:peih/screens/home/view_model.dart';
 
 class Profile extends StatefulWidget {
+  final ViewModel viewModel;
+
+  Profile(this.viewModel, {Key key}) : super(key: key);
+
   @override
-  _ProfileState createState() => _ProfileState();
+  _ProfileState createState() => _ProfileState(this.viewModel);
 }
 
 class _ProfileState extends State<Profile> {
+  final ViewModel viewModel;
+
+  _ProfileState(this.viewModel);
+
+
   // User image
   Widget pictureProfile = Container(
     margin: const EdgeInsets.only(bottom: 20),
@@ -68,6 +78,9 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    print(this.viewModel.pictures);
+
+
     return Container(
       margin: EdgeInsets.only(right: 15, left: 12),
       color: Colors.white,

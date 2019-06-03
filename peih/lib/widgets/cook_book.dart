@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:peih/models/constants.dart';
 
 class CookBook extends StatelessWidget {
-  String image = Constants.picture_1;
+  final String image;
 
-  CookBook(String image) {
-    this.image = image;
-  }
+  CookBook(this.image, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

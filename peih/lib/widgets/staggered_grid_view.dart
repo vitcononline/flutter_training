@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 
 class StaggeredGridView extends StatefulWidget {
-  var columns = [];
+  final List items;
+  final int columnCount;
 
-  StaggeredGridView(List<Widget> items, int columnCount) {
+  StaggeredGridView(this.items, this.columnCount, {Key key}) : super(key: key);
+
+  @override
+  _StaggeredGridViewState createState() =>
+      _StaggeredGridViewState(items, columnCount);
+}
+
+class _StaggeredGridViewState extends State<StaggeredGridView> {
+  List columns = [];
+
+  _StaggeredGridViewState(List items, int columnCount) {
     int columnIndex = columnCount - 1;
 
     for (var i = 1; i <= columnCount; i++) this.columns.add([]);
@@ -15,18 +26,6 @@ class StaggeredGridView extends StatefulWidget {
 
       if (columnIndex == -1) columnIndex = columnCount - 1;
     }
-  }
-
-  @override
-  _StaggeredGridViewState createState() =>
-      _StaggeredGridViewState(this.columns);
-}
-
-class _StaggeredGridViewState extends State<StaggeredGridView> {
-  List columns = [];
-
-  _StaggeredGridViewState(List columns) {
-    this.columns = columns;
   }
 
   @override
