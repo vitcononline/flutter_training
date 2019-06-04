@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:peih/models/app_state.dart';
-import 'package:peih/screens/home/profile.dart';
-import 'package:peih/screens/home/cook_books.dart';
+import 'package:peih/screens/home/widgets/cook_books.dart';
+import 'package:peih/screens/home/widgets/profile.dart';
 import 'package:peih/screens/home/view_model.dart';
 import 'package:redux/redux.dart';
 
@@ -15,21 +15,29 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   bool liked = false;
   String name = "";
-
   var items = [];
 
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, ViewModel>(
       converter: (Store<AppState> store) => ViewModel.create(store),
-      builder: (BuildContext context, ViewModel viewModel) => CustomScrollView(
-            slivers: <Widget>[
-              SliverList(
-                delegate: SliverChildListDelegate(
-                  [Profile(viewModel), CookBooks()],
+      builder: (BuildContext context, ViewModel viewModel) => Scaffold(
+            appBar: AppBar(
+              title: Text('Ung dung hay nhat qua dat'),
+            ),
+            backgroundColor: Colors.white,
+            body: CustomScrollView(
+              slivers: <Widget>[
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      Profile(viewModel),
+                      CookBooks(),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
     );
   }
