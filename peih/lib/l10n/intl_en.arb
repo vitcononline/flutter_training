@@ -1,0 +1,9 @@
+{
+  "@@last_modified": "2019-06-05T14:07:27.953293",
+  "title": "App Hola Mundo",
+  "@title": {
+    "description": "The application title",
+    "type": "text",
+    "placeholders": {}
+  }
+}

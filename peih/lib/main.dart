@@ -5,6 +5,7 @@ import 'package:peih/models/app_state.dart';
 import 'package:peih/reducers/reducers.dart';
 import 'package:peih/routes.dart';
 import 'package:redux/redux.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
 
